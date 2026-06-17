@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" href="images/5338322.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio — Filimua</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <style>
+    /* ---------- BASE ---------- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+    a { text-decoration: none; color: #0d6efd; }
+    a:hover { color: #66b2ff; }
+
+    /* ---------- NAVBAR ---------- */
+    .navbar { background-color: #0d1b2a !important; }
+    .navbar .nav-link { color: #1b9aaa; font-weight: 500; transition: color 0.3s; }
+    .navbar .nav-link:hover { color: #66b2ff; }
+    .navbar-brand span { color: #66b2ff; font-weight: bold; }
+
+    /* ---------- HERO ---------- */
+    .hero-portfolio {
+      min-height: 80vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/pexels-photo-1102797.jfif') center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
+      position: relative;
+    }
+    .hero-portfolio h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 0.15em solid #66b2ff;
+      animation: typing 3s steps(30,end) 1, blink 0.75s step-end infinite;
+    }
+    .hero-portfolio p {
+      font-size: 1.5rem; 
+      margin-top: 15px; 
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      opacity: 0; animation: fadeIn 2s forwards 3s;
+    }
+    @keyframes typing { from { width: 0; } to { width: 100%; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    /* ---------- SECTIONS ---------- */
+    section { padding: 60px 15px; }
+    h2.section-title {
+      text-align: center; margin-bottom: 40px;
+      color: #66b2ff;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+      opacity: 0; transform: translateY(20px); transition: all 0.8s ease-in-out;
+    }
+    .fade-up { opacity: 1 !important; transform: translateY(0) !important; }
+
+    /* ---------- CARDS ---------- */
+    .card {
+      border-radius: 15px;
+      overflow: hidden;
+      background-color: rgba(27,27,27,0.85);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+      transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s;
+      opacity: 0;
+      transform: translateY(30px);
+      text-align: center;
+    }
+    .card:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.7); }
+    .card p { color: #e0e0e0; text-shadow: 1px 1px 4px rgba(0,0,0,0.6); }
+
+    /* ---------- ÍCONES ---------- */
+    .skill-icon { 
+      font-size: 3rem; 
+      color: #66b2ff; 
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      transition: transform 0.3s, color 0.3s; 
+    }
+    .skill-icon:hover { transform: rotate(15deg) scale(1.3); color: #ffcc00; }
+
+    /* ---------- BOTÃO VOLTAR AO TOPO ---------- */
+    #btnTop {
+      position: fixed; bottom: 30px; right: 30px;
+      background-color: #0d1b2a; color: #66b2ff;
+      border: none; padding: 12px 16px; border-radius: 50%;
+      font-size: 1.5rem; cursor: pointer; display: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: background-color 0.3s, transform 0.3s; z-index: 999;
+    }
+    #btnTop:hover { background-color: #66b2ff; color: #0d1b2a; transform: scale(1.1); }
+
+    /* ---------- FOOTER ---------- */
+    footer { background-color: #0d1b2a; color: #66b2ff; text-align: center; padding: 40px 15px; }
+    footer a { color: #1b9aaa; margin: 0 10px; font-size: 1.5rem; transition: color 0.3s; }
+    footer a:hover { color: #66b2ff; }
+
+    /* ---------- RESPONSIVO ---------- */
+    @media (max-width:768px){
+      .hero-portfolio h1{ font-size:2.5rem; }
+      .hero-portfolio p{ font-size:1.2rem; }
+      .skill-icon { font-size: 2.5rem; }
+    }
+
+      /* Hover efeito para imagens e cards */
+  .skill-card:hover, .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+    border-color: #ffcc00; /* destaque ao passar o mouse */
+  }
+
+  .skill-card img:hover, .project-card img:hover {
+    transform: scale(1.1);
+  }
+
+  .contact-item:hover {
+  transform: translateY(-10px);
+}
+.contact-item i {
+  display: block;
+  margin: 0 auto;
+}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="images/5338322.png" alt="logo" width="50" class="me-2">
+        <span class="brand-name">Filimua</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="sobre.html"><i class="bi bi-person-fill me-1"></i>Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades"><i class="bi bi-tools me-1"></i>Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projetos"><i class="bi bi-kanban-fill me-1"></i>Projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto"><i class="bi bi-envelope-fill me-1"></i>Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-portfolio">
+    <div class="container">
+      <h1>Olá, eu sou Filimua</h1>
+      <p>Programador Web • Designer • Especialista em Office e Windows</p>
+    </div>
+  </header>
+
+<!-- HABILIDADES -->
+<section id="habilidades">
+  <h2 class="section-title">Habilidades</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <a href="#" class="text-decoration-none">
+        <div class="card project-card h-100 text-center skill-card" style="border:2px solid #1b9aaa; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;">
+          <img src="images/html-css-php-mysql-logo-png-transparent-23.png" class="card-img-top mx-auto d-block" alt="Programação Web" style="height:200px; object-fit:contain; margin-top:20px; transition: transform 0.3s;">
+          <div class="card-body">
+            <h5 class="card-title">Programação Web</h5>
+            <p class="card-text">HTML, CSS, JavaScript, PHP e MySQL.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="#" class="text-decoration-none">
+        <div class="card project-card h-100 text-center skill-card" style="border:2px solid #1b9aaa; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;">
+          <img src="images/FOTOSHOP.jpg" class="card-img-top mx-auto d-block" alt="Photoshop" style="height:200px; object-fit:contain; margin-top:20px; transition: transform 0.3s;">
+          <div class="card-body">
+            <h5 class="card-title">Photoshop</h5>
+            <p class="card-text">Edição de imagens, banners e identidade visual.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="#" class="text-decoration-none">
+        <div class="card project-card h-100 text-center skill-card" style="border:2px solid #1b9aaa; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;">
+          <img src="images/11h2021.png" class="card-img-top mx-auto d-block" alt="Windows & Office" style="height:200px; object-fit:contain; margin-top:20px; transition: transform 0.3s;">
+          <div class="card-body">
+            <h5 class="card-title">Windows & Office</h5>
+            <p class="card-text">Instalação, configuração e licenciamento do Office.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos">
+  <h2 class="section-title">Projetos</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <a href="#" class="text-decoration-none">
+        <div class="card project-card h-100 text-center project-card" style="border:2px solid #66b2ff; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;">
+          <img src="images/metro-theme-big.png" class="card-img-top mx-auto d-block" alt="Website Corporativo" style="height:200px; object-fit:contain; margin-top:20px; transition: transform 0.3s;">
+          <div class="card-body">
+            <h5 class="card-title">Website Corporativo</h5>
+            <p class="card-text">Desenvolvimento completo de website responsivo.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="#" class="text-decoration-none">
+        <div class="card project-card h-100 text-center project-card" style="border:2px solid #66b2ff; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;">
+          <img src="images/0-4.png" class="card-img-top mx-auto d-block" alt="Design de Banner" style="height:200px; object-fit:contain; margin-top:20px; transition: transform 0.3s;">
+          <div class="card-body">
+            <h5 class="card-title">Design de Banner</h5>
+            <p class="card-text">Criação de identidade visual e banners promocionais.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="#" class="text-decoration-none">
+        <div class="card project-card h-100 text-center project-card" style="border:2px solid #66b2ff; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;">
+          <img src="images/Microsoft_Excel-Logo.wine.png" class="card-img-top mx-auto d-block" alt="Planilhas Excel" style="height:200px; object-fit:contain; margin-top:20px; transition: transform 0.3s;">
+          <div class="card-body">
+            <h5 class="card-title">Planilhas Excel</h5>
+            <p class="card-text">Automatização de cálculos e relatórios em Excel.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTATO -->
+<section id="contacto" class="py-5" style="background-color:#121212;">
+  <div class="container text-center">
+    <h2 class="section-title mb-5" style="color:#66b2ff;">Contatos</h2>
+    
+    <div class="d-flex justify-content-center flex-wrap gap-4">
+
+      <div class="contact-item p-4" style="flex:1 1 250px; max-width:300px; transition: transform 0.3s;">
+        <i class="bi bi-instagram" style="color:#e1306c; font-size:3rem; transition: transform 0.3s;"></i>
+        <h5 class="mt-3" style="color:#fff;">Instagram</h5>
+        <p><a href="https://www.instagram.com/filimuafjm/" style="color:#66b2ff; text-decoration:none;">@filimua_fjm</a></p>
+      </div>
+
+      <div class="contact-item p-4" style="flex:1 1 250px; max-width:300px; transition: transform 0.3s;">
+        <i class="bi bi-envelope-fill" style="font-size:3rem; color:#ff6b6b;"></i>
+        <h5 class="mt-3" style="color:#fff;">Email</h5>
+        <p><a href="mailto:programadorxxx27@gmail.com" style="color:#66b2ff; text-decoration:none;">programadorxxx27@gmail.com</a></p>
+      </div>
+
+      <div class="contact-item p-4" style="flex:1 1 250px; max-width:300px; transition: transform 0.3s;">
+        <i class="bi bi-geo-alt-fill" style="font-size:3rem; color:#faca2f;"></i>
+        <h5 class="mt-3" style="color:#fff;">Localização</h5>
+        <p>Luanda, Angola</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button id="btnTop"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- FOOTER -->
+  <!-- FOOTER -->
+<footer style="background: linear-gradient(135deg, #0d1b2a, #1b1b2b, #121212); color:#fff; padding:40px 15px; text-align:center;">
+  <div class="container">
+    <h4 style="color:#66b2ff; margin-bottom:20px;">Vamos nos conectar!</h4>
+    <p style="margin-bottom:25px;">Siga-me nas redes sociais ou entre em contato diretamente.</p>
+    
+    <div class="d-flex justify-content-center flex-wrap gap-3 mb-4">
+      <a href="https://www.instagram.com/filimuafjm/" target="_blank" style="color:#e1306c; font-size:1.8rem; transition: transform 0.3s;"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61578217589102" target="_blank" style="color:#1877f2; font-size:1.8rem; transition: transform 0.3s;"><i class="bi bi-facebook"></i></a>
+      <a href="https://github.com/Programador458" target="_blank" style="color:#fff; font-size:1.8rem; transition: transform 0.3s;"><i class="bi bi-github"></i></a>
+    </div>
+
+    <p style="font-size:0.9rem;">© 2025 Filimua — Todos os direitos reservados</p>
+    <p style="font-size:0.8rem; color:#aaa;">Desenvolvido com ❤️ usando HTML, CSS, JavaScript,e Bootstrap</p>
+  </div>
+</footer>
+
+  <script src="js/bootstrap.bundle.js"></script>
+  <script>
+    // Fade-in cards e títulos ao scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('fade-up');
+          entry.target.style.opacity = 1;
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.card, .section-title').forEach(el => observer.observe(el));
+
+    // Botão voltar ao topo
+    const btnTop = document.getElementById('btnTop');
+    window.onscroll = function() {
+      if(document.body.scrollTop > 300 || document.documentElement.scrollTop > 300){
+        btnTop.style.display = "block";
+      } else { btnTop.style.display = "none"; }
+    };
+    btnTop.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+</body>
+</html>

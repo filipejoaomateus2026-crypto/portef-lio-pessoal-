@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" href="images/5338322.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre — Filimua</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+
+    a { text-decoration: none; color: #0d6efd; }
+    a:hover { color: #66b2ff; }
+
+    .navbar { background-color: #0d1b2a !important; }
+    .navbar .nav-link { color: #1b9aaa; font-weight: 500; }
+    .navbar .nav-link:hover { color: #66b2ff; }
+    .navbar-brand span { color: #66b2ff; font-weight: bold; }
+
+    main { padding: 80px 15px; max-width: 900px; margin: auto; }
+    h1,h2 { color: #66b2ff; margin-bottom: 20px; }
+    p { color: #cfcfcf; line-height: 1.8; margin-bottom: 20px; font-size: 1.1rem; }
+
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+      margin-top: 30px;
+      justify-content: center;
+    }
+
+    .about-text {
+      flex: 1 1 300px;
+      text-align: left;
+    }
+
+    .about-img {
+      flex: 1 1 300px;
+    }
+
+    .about-img img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .skill-item {
+      background-color: #1b1b1b;
+      padding: 10px 15px;
+      border-radius: 10px;
+      color: #66b2ff;
+      font-weight: 500;
+    }
+
+    footer {
+      background-color: #0d1b2a;
+      color: #66b2ff;
+      text-align: center;
+      padding: 40px 15px;
+      margin-top: 60px;
+    }
+    footer a { color: #1b9aaa; margin: 0 10px; font-size: 1.5rem; transition: color 0.3s; }
+    footer a:hover { color: #66b2ff; }
+    footer p { margin-top: 15px; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/5338322.png" alt="logo" width="50" class="me-2">
+        <span class="brand-name">Filimua</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill"></i>Home</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <h1>Sobre Mim</h1>
+    <p>Sou um desenvolvedor web apaixonado por criar experiências digitais modernas e funcionais. Meu objetivo é transformar ideias em websites interativos, responsivos e com design atrativo.</p>
+
+    <div class="about-section">
+      <div class="about-img">
+        <img src="images/IMG-20250507-WA0028.jpg" alt="Filimua">
+      </div>
+      <div class="about-text">
+        <h2>Minha Jornada</h2>
+        <p>Desde cedo me interessei por tecnologia e programação. Com dedicação, aprendi HTML, CSS, JavaScript, PHP e MySQL, desenvolvendo projetos que unem funcionalidade e estética.</p>
+        <h2>Habilidades</h2>
+        <div class="skills-list">
+          <span class="skill-item">HTML5</span>
+          <span class="skill-item">CSS3</span>
+          <span class="skill-item">JavaScript</span>
+          <span class="skill-item">PHP</span>
+          <span class="skill-item">MySQL</span>
+          <span class="skill-item">Bootstrap</span>
+          <span class="skill-item">Design Responsivo</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-4">Obrigado por ter acessado o meu portifólio</a>.</p>
+    <a href="index.html" class="btn btn-primary mt-2">Voltar ao Portfólio</a>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <a href="https://www.instagram.com/filimuafjm/" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61578217589102" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="https://github.com/Programador458" target="_blank"><i class="bi bi-github"></i></a>
+    </div>
+    <p>© 2025 Filimua — Todos os direitos reservados</p>
+  </footer>
+
+  <script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>
